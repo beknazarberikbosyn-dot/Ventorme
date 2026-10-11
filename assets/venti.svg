@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 240" role="img" aria-label="Venti — горилла в очках, кепке и футболке">
+  <defs>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2f55"/>
+      <stop offset=".55" stop-color="#0d0f1c"/>
+      <stop offset="1" stop-color="#3b47ff"/>
+    </linearGradient>
+    <linearGradient id="tee" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b56ff"/>
+      <stop offset="1" stop-color="#2f39e6"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a4d"/>
+      <stop offset="1" stop-color="#f2702b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- оверсайз-футболка -->
+  <path d="M28 240c-4-38 4-70 30-86 14-8 30-12 52-12s38 4 52 12c26 16 34 48 30 86z" fill="url(#tee)"/>
+  <!-- рукава -->
+  <path d="M40 162c-14 10-24 30-26 52l30 6 10-40z" fill="#2f39e6"/>
+  <path d="M180 162c14 10 24 30 26 52l-30 6-10-40z" fill="#2f39e6"/>
+  <!-- руки -->
+  <path d="M16 212c-2 12 0 22 8 26h24l-2-20z" fill="#33333d"/>
+  <path d="M204 212c2 12 0 22-8 26h-24l2-20z" fill="#33333d"/>
+  <!-- ворот -->
+  <path d="M84 146c6 10 16 15 26 15s20-5 26-15" fill="none" stroke="#2530c9" stroke-width="7" stroke-linecap="round"/>
+  <!-- принт на футболке -->
+  <path d="M96 182l14 30 14-30" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="139" cy="178" r="3" fill="#ffd166"/>
+  <circle cx="80" cy="200" r="2.5" fill="#ffd166"/>
+
+  <!-- уши -->
+  <circle cx="44" cy="96" r="15" fill="#33333d"/>
+  <circle cx="44" cy="96" r="8" fill="#6b5a54"/>
+  <circle cx="176" cy="96" r="15" fill="#33333d"/>
+  <circle cx="176" cy="96" r="8" fill="#6b5a54"/>
+  <!-- голова -->
+  <path d="M110 30c-40 0-66 26-66 66 0 38 26 60 66 60s66-22 66-60c0-40-26-66-66-66z" fill="#3a3a45"/>
+  <!-- лицо -->
+  <path d="M110 70c-26 0-44 12-44 34 0 26 20 42 44 42s44-16 44-42c0-22-18-34-44-34z" fill="#7a665e"/>
+  <!-- надбровье -->
+  <path d="M64 84c10-10 28-14 46-14s36 4 46 14c-6 6-26 8-46 8s-40-2-46-8z" fill="#2c2c36"/>
+  <!-- нос -->
+  <path d="M96 112c4-6 24-6 28 0 3 5-4 10-14 10s-17-5-14-10z" fill="#4a3c37"/>
+  <ellipse cx="104" cy="114" rx="3.2" ry="2.4" fill="#231c1a"/>
+  <ellipse cx="116" cy="114" rx="3.2" ry="2.4" fill="#231c1a"/>
+  <!-- ухмылка -->
+  <path d="M92 130c8 8 28 8 38-2" fill="none" stroke="#231c1a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M128 127l5-3" stroke="#231c1a" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- очки -->
+  <path d="M60 86h100" stroke="#0d0f1c" stroke-width="6" stroke-linecap="round"/>
+  <path d="M64 84h38c2 0 3 2 3 4l-3 14c-1 6-6 10-12 10H76c-7 0-12-5-13-11l-2-13c0-2 1-4 3-4z" fill="url(#lens)" stroke="#0d0f1c" stroke-width="3"/>
+  <path d="M118 84h38c2 0 3 2 3 4l-2 13c-1 6-6 11-13 11h-14c-6 0-11-4-12-10l-3-14c0-2 1-4 3-4z" fill="url(#lens)" stroke="#0d0f1c" stroke-width="3"/>
+  <path d="M71 90l10 0M71 95l5 0" stroke="#fff" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+  <path d="M125 90l10 0M125 95l5 0" stroke="#fff" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- кепка -->
+  <path d="M50 66c2-30 28-46 60-46s58 16 60 46c-18-6-38-9-60-9s-42 3-60 9z" fill="url(#cap)"/>
+  <path d="M110 20v38" stroke="#e0601d" stroke-width="2.5"/>
+  <circle cx="110" cy="21" r="4" fill="#e0601d"/>
+  <path d="M100 38l8 12 8-12" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- козырёк, чуть набок -->
+  <path d="M48 64c26-10 72-12 112-4 18 4 32 10 38 16-4 4-16 4-30 1-40-8-84-6-120 2z" fill="#e0601d"/>
+  <path d="M52 66c30-8 70-9 104-3" fill="none" stroke="#ffb27a" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+</svg>
