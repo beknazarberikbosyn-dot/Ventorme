@@ -103,6 +103,7 @@
   .hero h1{font-size:clamp(36px,10vw,60px);font-weight:800;letter-spacing:-.03em}
   .hero .lead{font-size:19px;line-height:1.45;color:rgba(255,255,255,.92);max-width:24em}
   .hero-cta{display:grid;gap:10px}
+  .hero-cta .btn-ghost{font-size:16px;padding:0 12px;gap:8px}
   .hero-note{font-size:14px;color:rgba(255,255,255,.85);display:flex;flex-wrap:wrap;gap:4px 14px}
   .hero-note span::before{content:"✓ ";font-weight:800}
   .hero-mascot{position:absolute;right:-4px;top:12px;width:96px;height:auto;z-index:0;pointer-events:none;filter:drop-shadow(0 12px 18px rgba(0,0,0,.25))}
@@ -249,12 +250,14 @@
   /* Venti helper */
   .venti-fab{position:fixed;right:14px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:45;width:62px;height:62px;border-radius:50%;border:0;padding:0;background:var(--card);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;transition:transform .15s}
   .venti-fab:hover{transform:scale(1.06)}
-  .venti-fab img{width:54px;height:54px;object-fit:cover;object-position:50% 6%;border-radius:50%}
+  .venti-fab img{width:100%;height:100%;object-fit:cover;object-position:50% 0;border-radius:50%;transform:scale(1.9);transform-origin:50% 18%}
+  .venti-fab{overflow:hidden}
   .venti-fab::after{content:"";position:absolute;top:4px;right:4px;width:12px;height:12px;border-radius:50%;background:#22c55e;border:2px solid var(--card)}
   .venti{position:fixed;right:12px;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;max-width:400px;margin-left:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);display:none;flex-direction:column;max-height:min(560px,80vh);overflow:hidden}
   .venti.open{display:flex}
   .venti-head{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--blue);color:#fff}
-  .venti-head img{width:40px;height:40px;background:#fff;border-radius:50%;object-fit:cover;object-position:50% 6%}
+  .venti-head .ava{width:40px;height:40px;background:#fff;border-radius:50%;overflow:hidden;flex:none}
+  .venti-head .ava img{width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1.9);transform-origin:50% 18%}
   .venti-head b{display:block;font-size:16px}
   .venti-head small{opacity:.85;font-size:13px}
   .venti-head button{margin-left:auto;background:rgba(255,255,255,.18);border:0;color:#fff;width:34px;height:34px;border-radius:10px;font-size:20px;cursor:pointer}
@@ -297,7 +300,7 @@
     .dock{display:none}
     footer{padding-bottom:40px}
     .venti-fab{bottom:24px;right:24px;width:70px;height:70px}
-    .venti-fab img{width:60px;height:60px}
+
     .venti{right:24px;bottom:24px;left:auto;width:380px}
     .row2{grid-template-columns:1fr 1fr}
   }
@@ -626,7 +629,7 @@
 <button type="button" class="venti-fab" id="ventiFab" aria-label="Открыть помощника Venti"><img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt=""></button>
 <div class="venti" id="venti" role="dialog" aria-label="Помощник Venti">
   <div class="venti-head">
-    <img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt="">
+    <span class="ava"><img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt=""></span>
     <div><b>Venti</b><small>помощник Ventorme</small></div>
     <button type="button" id="ventiClose" aria-label="Закрыть">×</button>
   </div>
