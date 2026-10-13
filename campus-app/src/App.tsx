@@ -165,7 +165,14 @@ export default function App() {
             <h1>{t('home.title')}</h1>
             <p className="lede">{t('home.lede')}</p>
             <div className="mascot-hero">
-              <img src="../assets/venti.svg" alt="" />
+              <img
+                src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp"
+                onError={(e) => {
+                  e.currentTarget.onerror = null
+                  e.currentTarget.src = '../assets/venti.svg'
+                }}
+                alt=""
+              />
               <p>
                 <b>Venti:</b> «Введи вуз мечты — покажу кампус, общагу, цены и что нужно для поступления. Без буклетов приёмной.»
               </p>

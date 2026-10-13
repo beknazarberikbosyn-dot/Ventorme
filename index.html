@@ -105,7 +105,7 @@
   .hero-cta{display:grid;gap:10px}
   .hero-note{font-size:14px;color:rgba(255,255,255,.85);display:flex;flex-wrap:wrap;gap:4px 14px}
   .hero-note span::before{content:"✓ ";font-weight:800}
-  .hero-mascot{position:absolute;right:-6px;top:14px;width:92px;height:auto;z-index:0;pointer-events:none;filter:drop-shadow(0 12px 18px rgba(0,0,0,.25))}
+  .hero-mascot{position:absolute;right:-4px;top:12px;width:96px;height:auto;z-index:0;pointer-events:none;filter:drop-shadow(0 12px 18px rgba(0,0,0,.25))}
   .hero h1{padding-right:70px}
   .hero-side{display:none}
 
@@ -205,7 +205,7 @@
   .uni{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px 18px;display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
   .uni>*{min-width:0}
   .uni-top{display:flex;gap:14px;align-items:center}
-  .uni-top img{width:58px;height:58px;flex:none}
+  .uni-top img{width:58px;height:64px;flex:none;object-fit:contain}
   .uni-search{display:flex;gap:8px;background:var(--field);border:1.5px solid var(--line);border-radius:16px;padding:6px}
   .uni-search:focus-within{border-color:var(--blue)}
   .uni-search input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:16px;color:var(--ink);padding:10px;outline:none}
@@ -236,7 +236,7 @@
 
   /* final */
   .final{background:var(--final-bg);color:#fff;border-radius:28px;padding:30px 22px;display:grid;gap:14px;text-align:center;justify-items:center}
-  .final img{width:96px;height:auto}
+  .final img{width:120px;height:auto}
   .final p{color:rgba(255,255,255,.78)}
   .final .btn{width:100%;max-width:420px}
   footer{padding:28px 0 120px;color:var(--muted);font-size:14px;text-align:center}
@@ -249,12 +249,12 @@
   /* Venti helper */
   .venti-fab{position:fixed;right:14px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:45;width:62px;height:62px;border-radius:50%;border:0;padding:0;background:var(--card);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;transition:transform .15s}
   .venti-fab:hover{transform:scale(1.06)}
-  .venti-fab img{width:54px;height:54px}
+  .venti-fab img{width:54px;height:54px;object-fit:cover;object-position:50% 6%;border-radius:50%}
   .venti-fab::after{content:"";position:absolute;top:4px;right:4px;width:12px;height:12px;border-radius:50%;background:#22c55e;border:2px solid var(--card)}
   .venti{position:fixed;right:12px;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;max-width:400px;margin-left:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);display:none;flex-direction:column;max-height:min(560px,80vh);overflow:hidden}
   .venti.open{display:flex}
   .venti-head{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--blue);color:#fff}
-  .venti-head img{width:40px;height:40px;background:#fff;border-radius:50%}
+  .venti-head img{width:40px;height:40px;background:#fff;border-radius:50%;object-fit:cover;object-position:50% 6%}
   .venti-head b{display:block;font-size:16px}
   .venti-head small{opacity:.85;font-size:13px}
   .venti-head button{margin-left:auto;background:rgba(255,255,255,.18);border:0;color:#fff;width:34px;height:34px;border-radius:10px;font-size:20px;cursor:pointer}
@@ -334,7 +334,7 @@
   <div class="hero">
     <div class="wrap">
       <div class="hero-card">
-        <img class="hero-mascot" src="assets/venti.svg" alt="">
+        <img class="hero-mascot" src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt="">
         <div class="hero-copy">
           <h1>Не знаешь, кем стать?</h1>
           <p class="lead">Ventorme поможет выбрать профессию и найти подходящий университет.</p>
@@ -349,7 +349,7 @@
         </div>
         <div class="hero-side" aria-hidden="true">
           <div class="bubble">Привет! Помогу выбрать путь 🎓</div>
-          <img src="assets/venti.svg" alt="">
+          <img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt="">
         </div>
       </div>
     </div>
@@ -534,7 +534,7 @@
       <div class="uni">
         <div style="display:grid;gap:12px">
           <div class="uni-top">
-            <img src="assets/venti.svg" alt="">
+            <img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt="">
             <div style="display:grid;gap:6px">
               <span class="eyebrow">Подбор вузов</span>
               <h2 style="font-size:clamp(24px,5vw,32px)">Посмотри вуз изнутри</h2>
@@ -608,7 +608,7 @@
   <section>
     <div class="wrap">
       <div class="final">
-        <img src="assets/venti.svg" alt="">
+        <img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt="">
         <h2>Начни с теста — это бесплатно</h2>
         <p>2 минуты без регистрации. Сохранить результат и получить план — в Ventorme.</p>
         <a class="btn btn-white" href="#test">Пройти бесплатный тест</a>
@@ -623,10 +623,10 @@
 
 <div class="dock" id="dock"><a class="btn btn-primary" href="#test" id="dockBtn">Узнать свою профессию</a></div>
 
-<button type="button" class="venti-fab" id="ventiFab" aria-label="Открыть помощника Venti"><img src="assets/venti.svg" alt=""></button>
+<button type="button" class="venti-fab" id="ventiFab" aria-label="Открыть помощника Venti"><img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt=""></button>
 <div class="venti" id="venti" role="dialog" aria-label="Помощник Venti">
   <div class="venti-head">
-    <img src="assets/venti.svg" alt="">
+    <img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" onerror="this.onerror=null;this.src='assets/venti.svg'" alt="">
     <div><b>Venti</b><small>помощник Ventorme</small></div>
     <button type="button" id="ventiClose" aria-label="Закрыть">×</button>
   </div>
