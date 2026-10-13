@@ -166,7 +166,7 @@ export default function App() {
             <p className="lede">{t('home.lede')}</p>
             <div className="mascot-hero">
               <img
-                src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp"
+                src="../assets/venti-3d.webp"
                 onError={(e) => {
                   e.currentTarget.onerror = null
                   e.currentTarget.src = '../assets/venti.svg'
