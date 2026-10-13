@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { LanguageSwitcher } from './LanguageSwitcher'
 
-/** Ссылка команды. Меняйте вместе с team-017 в ../index.html */
-export const REGISTER_URL = 'https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-017'
+/** Ссылка команды. Меняйте вместе с team-109 в ../index.html */
+export const REGISTER_URL = 'https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109'
 
 const THEME_KEY = 'ventorme-theme'
 type Theme = 'light' | 'dark'
