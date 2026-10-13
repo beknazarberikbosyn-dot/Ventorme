@@ -3,214 +3,257 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ventorme — пойми, кем стать и куда поступать</title>
-<meta name="description" content="Профтест, подбор вузов, калькулятор гранта по ЕНТ, подготовка к IELTS и SAT. Бесплатная регистрация за 10 секунд.">
+<title>Ventorme — не знаешь, кем стать?</title>
+<meta name="description" content="Ventorme поможет выбрать профессию и найти подходящий университет. Бесплатный тест без регистрации за 2 минуты.">
 <meta name="theme-color" content="#3b47ff">
+<meta property="og:title" content="Не знаешь, кем стать? — Ventorme">
+<meta property="og:description" content="Бесплатный тест без регистрации: узнай подходящие профессии и вузы за 2 минуты.">
 <link rel="icon" type="image/svg+xml" href="assets/venti.svg">
 <script>try{var t=localStorage.getItem("ventorme-theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<meta property="og:title" content="Ventorme — пойми, кем стать и куда поступать">
-<meta property="og:description" content="Профтест за 5 минут, подбор вузов и шансы на грант. Бесплатно.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap">
 <style>
   /*
-    ССЫЛКА КОМАНДЫ: замените team-109 на номер своей команды
-    через поиск-замену (Ctrl+H) по всему файлу. Больше ничего менять не нужно.
+    ССЫЛКА КОМАНДЫ (Terrapixel): team-109.
+    Все кнопки регистрации берут ссылку из href с классом .cta.
   */
   :root{
-    --blue:#3b47ff; --blue-d:#2b35e0; --blue-soft:#eef0ff;
+    --blue:#3b47ff; --blue-d:#2b35e0; --blue-soft:#eef0ff; --blue-ink:#2b35e0;
     --ink:#171a2b; --muted:#5d6275; --line:#e6e8f2;
-    --bg:#f8faff; --card:#ffffff;
+    --bg:#f8faff; --card:#ffffff; --field:#fafbff;
     --green:#1f9d6c; --green-soft:#dff8ea;
-    --orange:#e4885d; --orange-soft:#ffeee4;
-    --violet:#7c5cff; --violet-soft:#efeaff;
-    --radius:20px;
+    --orange:#c8601f; --orange-soft:#ffeee4;
+    --violet:#6b4ce6; --violet-soft:#efeaff;
+    --amber-soft:#fff4dc; --amber-ink:#8a5a00;
     --top-bg:rgba(248,250,255,.92);
-    --field:#fafbff; --btn-outline:#fff; --lock-ink:#2a3080; --parents-ink:#4a3f78;
     --final-bg:#171a2b; --iab-bg:#fff7e0; --iab-line:#f3e0a6; --iab-ink:#171a2b;
     --shadow:0 18px 40px -18px rgba(23,26,43,.35);
+    --radius:20px;
     color-scheme:light;
   }
   :root[data-theme="dark"]{
-    --blue:#5864ff; --blue-d:#6d78ff; --blue-soft:rgba(88,100,255,.16);
+    --blue:#5864ff; --blue-d:#6d78ff; --blue-soft:rgba(88,100,255,.16); --blue-ink:#b0b6ff;
     --ink:#f4f5f8; --muted:rgba(244,245,248,.68); --line:rgba(255,255,255,.1);
-    --bg:#0d0f15; --card:#151821;
+    --bg:#0d0f15; --card:#151821; --field:#1a1e29;
     --green:#72dbae; --green-soft:rgba(31,157,108,.2);
     --orange:#f3b08f; --orange-soft:rgba(228,136,93,.2);
     --violet:#c2b3ff; --violet-soft:rgba(124,92,255,.2);
+    --amber-soft:rgba(240,195,90,.14); --amber-ink:#f0c35a;
     --top-bg:rgba(13,15,21,.88);
-    --field:#1a1e29; --btn-outline:#1a1e29; --lock-ink:#c9ceff; --parents-ink:#d8d0ff;
     --final-bg:#1c2030; --iab-bg:#2a2414; --iab-line:#4a3f1e; --iab-ink:#f4f5f8;
     --shadow:0 18px 40px -18px rgba(0,0,0,.7);
     color-scheme:dark;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{margin:0;transition:background .2s ease,color .2s ease;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-weight:500;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom)}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-weight:500;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom);transition:background .2s ease,color .2s ease}
   a{color:inherit}
+  img{max-width:100%}
   .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
   h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.12}
   h2{font-size:clamp(26px,5.5vw,38px);font-weight:800}
   h3{font-size:19px;font-weight:700}
   p{margin:0}
-  section{padding:56px 0}
-  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+  section{padding:52px 0 0;scroll-margin-top:70px}
+  .eyebrow{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-ink)}
+  .sec-head{display:grid;gap:10px;margin-bottom:22px;max-width:640px}
+  .sec-head p{color:var(--muted)}
+  .src{font-size:13px;color:var(--muted)}
+  .src a{color:var(--muted)}
 
   /* buttons */
-  .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 22px;border-radius:16px;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .12s ease,background .15s ease;-webkit-tap-highlight-color:transparent}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 22px;border-radius:16px;font-weight:800;font-size:17px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .12s ease,background .15s ease;-webkit-tap-highlight-color:transparent;text-align:center}
   .btn:active{transform:scale(.98)}
   .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px -8px rgba(59,71,255,.6)}
   .btn-primary:hover{background:var(--blue-d)}
-  .btn-white{background:#fff;color:var(--blue)}
+  .btn-white{background:#fff;color:#2b35e0}
   .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35)}
-  .btn-outline{background:var(--btn-outline);color:var(--ink);border:1.5px solid var(--line)}
-  .btn:focus-visible,.opt:focus-visible,summary:focus-visible{outline:3px solid #ffb84d;outline-offset:3px}
+  .btn-outline{background:var(--card);color:var(--ink);border:1.5px solid var(--line)}
+  .btn-outline:hover{border-color:var(--blue)}
+  .btn:focus-visible,.opt:focus-visible,.tab:focus-visible,summary:focus-visible,.theme-btn:focus-visible{outline:3px solid #ffb84d;outline-offset:3px}
   .g{width:20px;height:20px;flex:none;background:#fff;border-radius:50%;padding:2px}
 
   /* top bar */
   .top{position:sticky;top:0;z-index:30;background:var(--top-bg);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
-  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:8px}
   .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px;text-decoration:none;letter-spacing:-.02em}
   .logo i{width:28px;height:28px;border-radius:9px;background:var(--blue);display:grid;place-items:center;color:#fff;font-style:normal;font-size:16px}
-  .top .btn{min-height:40px;padding:0 16px;font-size:15px;border-radius:12px}
+  .top-actions{display:flex;align-items:center;gap:8px}
+  .top .btn{min-height:40px;padding:0 14px;font-size:15px;border-radius:12px}
+  .nav-link{font-weight:700;font-size:15px;text-decoration:none;color:var(--muted);padding:8px 6px;display:none}
+  .nav-link:hover{color:var(--blue-ink)}
+  .theme-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;flex:none}
+  .theme-btn svg{width:18px;height:18px}
+  .theme-btn .sun{display:none}
+  :root[data-theme="dark"] .theme-btn .sun{display:block}
+  :root[data-theme="dark"] .theme-btn .moon{display:none}
 
   /* in-app browser notice */
   .iab{display:none;background:var(--iab-bg);color:var(--iab-ink);border-bottom:1px solid var(--iab-line);font-size:15px;line-height:1.45}
   .iab.show{display:block}
-  .iab .wrap{padding-top:12px;padding-bottom:12px;display:flex;gap:12px;align-items:flex-start}
-  .iab b{font-weight:700}
+  .iab .wrap{padding-top:10px;padding-bottom:10px;display:flex;gap:12px;align-items:center}
   .iab button{flex:none;font:inherit;font-weight:700;font-size:14px;border:0;background:#1f2233;color:#fff;border-radius:10px;padding:8px 12px;cursor:pointer}
 
   /* hero */
-  .hero{padding:20px 0 0}
-  .hero-card{background:var(--blue);color:#fff;border-radius:28px;padding:28px 22px 24px;position:relative;overflow:hidden;display:grid;gap:22px}
+  .hero{padding:16px 0 0}
+  .hero-card{background:var(--blue);color:#fff;border-radius:28px;padding:30px 22px 26px;position:relative;overflow:hidden;display:grid;gap:22px}
   .hero-card::after{content:"";position:absolute;right:-90px;top:-90px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),rgba(255,255,255,0) 70%);pointer-events:none}
-  .chips{display:flex;flex-wrap:wrap;gap:6px}
-  .chip{font-size:13px;font-weight:700;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.16)}
-  .hero h1{font-size:clamp(32px,8.6vw,56px);font-weight:800}
-  .hero h1 span{color:#c9ceff}
-  .hero .lead{font-size:18px;color:rgba(255,255,255,.9);max-width:30em}
+  .hero-copy{display:grid;gap:18px;position:relative;z-index:1}
+  .hero h1{font-size:clamp(36px,10vw,60px);font-weight:800;letter-spacing:-.03em}
+  .hero .lead{font-size:19px;line-height:1.45;color:rgba(255,255,255,.92);max-width:24em}
   .hero-cta{display:grid;gap:10px}
-  .trust{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;color:rgba(255,255,255,.85)}
-  .trust span::before{content:"✓ ";font-weight:800}
+  .hero-note{font-size:14px;color:rgba(255,255,255,.85);display:flex;flex-wrap:wrap;gap:4px 14px}
+  .hero-note span::before{content:"✓ ";font-weight:800}
+  .hero-mascot{position:absolute;right:-6px;top:14px;width:92px;height:auto;z-index:0;pointer-events:none;filter:drop-shadow(0 12px 18px rgba(0,0,0,.25))}
+  .hero h1{padding-right:70px}
   .hero-side{display:none}
 
-  /* quiz */
-  .quiz{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px;margin-top:22px;scroll-margin-top:76px}
-  .quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
-  .quiz-head .step{font-size:14px;color:var(--muted);font-weight:600;white-space:nowrap}
+  /* test */
+  .test{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px 18px;scroll-margin-top:76px}
+  .test-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .test-head .step{font-size:14px;color:var(--muted);font-weight:700;white-space:nowrap}
   .bar{height:6px;border-radius:99px;background:var(--blue-soft);overflow:hidden;margin:12px 0 18px}
   .bar i{display:block;height:100%;width:0;background:var(--blue);border-radius:99px;transition:width .3s ease}
   .q{font-size:21px;font-weight:800;margin-bottom:14px;letter-spacing:-.01em}
   .opts{display:grid;gap:10px}
-  .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;font:inherit;font-weight:600;font-size:16px;color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;min-height:56px;transition:border-color .15s,background .15s}
+  .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;font:inherit;font-weight:600;font-size:16px;color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:14px;padding:13px 14px;cursor:pointer;min-height:54px;transition:border-color .15s,background .15s}
   .opt:hover{border-color:var(--blue)}
   .opt .em{font-size:22px;width:28px;text-align:center;flex:none}
+  .back{background:none;border:0;font:inherit;font-size:15px;font-weight:700;color:var(--muted);cursor:pointer;padding:12px 0 0}
   .result{display:none}
-  .result.show{display:block}
-  .res-tag{display:inline-block;background:var(--green-soft);color:var(--green);font-weight:700;font-size:13px;border-radius:999px;padding:5px 11px;margin-bottom:10px}
-  .res-title{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
-  .res-list{margin:14px 0 18px;padding:0;list-style:none;display:grid;gap:8px}
-  .res-list li{display:flex;gap:10px;font-size:16px}
-  .res-list li::before{content:"→";color:var(--blue);font-weight:800}
-  .lock{background:var(--blue-soft);border-radius:14px;padding:14px;font-size:15px;color:var(--lock-ink);margin-bottom:14px}
-  .linkbtn{background:none;border:0;font:inherit;color:var(--muted);text-decoration:underline;cursor:pointer;margin-top:12px;font-size:15px;padding:6px 0}
-
-  /* features */
-  .sec-head{display:grid;gap:10px;margin-bottom:26px;max-width:640px}
-  .sec-head p{color:var(--muted)}
-  .feats{display:grid;gap:12px}
-  .feat{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-decoration:none;transition:border-color .15s,transform .12s}
-  .feat:hover{border-color:var(--blue)}
-  .feat:active{transform:scale(.99)}
-  .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:24px;flex:none}
-  .feat p{color:var(--muted);font-size:15px;margin-top:4px}
-  .feat .go{margin-left:auto;align-self:center;color:var(--blue);font-weight:800;font-size:20px}
+  .result.show{display:grid;gap:14px}
+  .tag{display:inline-block;font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:5px 11px}
+  .tag-green{background:var(--green-soft);color:var(--green)}
+  .tag-amber{background:var(--amber-soft);color:var(--amber-ink)}
+  .res-title{font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .match{display:grid;gap:10px}
+  .match-row{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center}
+  .match-row b{font-size:16px}
+  .match-row span{font-weight:800;color:var(--blue-ink);font-variant-numeric:tabular-nums}
+  .match-row i{grid-column:1/-1;height:8px;border-radius:99px;background:var(--blue-soft);overflow:hidden;display:block}
+  .match-row i::after{content:"";display:block;height:100%;width:var(--w);background:var(--blue);border-radius:99px}
+  .profs{display:grid;gap:8px}
+  .prof{display:flex;gap:10px;align-items:flex-start;background:var(--field);border:1px solid var(--line);border-radius:14px;padding:12px}
+  .prof .em{font-size:22px;flex:none;width:28px;text-align:center}
+  .prof b{display:block;font-size:16px;line-height:1.3}
+  .prof small{display:block;color:var(--muted);font-size:14px;line-height:1.4}
+  .prof .trend{color:var(--green);font-weight:700}
+  .lock{background:var(--blue-soft);border-radius:14px;padding:14px;font-size:15px}
+  .row2{display:grid;gap:10px}
+  .row2 .btn{font-size:16px;padding:0 14px}
 
   /* steps */
-  .steps{display:grid;gap:12px;counter-reset:s}
-  .stepc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;position:relative}
-  .stepc::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--blue);color:#fff;font-weight:800;margin-bottom:12px}
-  .stepc p{color:var(--muted);font-size:15px;margin-top:6px}
+  .steps{display:grid;gap:12px}
+  .stepc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;gap:14px;align-items:flex-start}
+  .stepc .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:26px;flex:none;position:relative}
+  .stepc .ico b{position:absolute;top:-6px;left:-6px;width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;display:grid;place-items:center}
+  .stepc p{color:var(--muted);font-size:15px;margin-top:4px}
 
-  /* parents */
-  .parents{background:var(--violet-soft);border-radius:28px;padding:26px 20px;display:grid;gap:14px}
-  .parents p{color:var(--parents-ink)}
+  /* example */
+  .example{background:var(--card);border:1.5px dashed var(--line);border-radius:24px;padding:20px 16px;display:grid;gap:16px;position:relative}
+  .ex-head{display:flex;gap:12px;align-items:center}
+  .avatar{width:52px;height:52px;border-radius:50%;background:var(--violet-soft);display:grid;place-items:center;font-size:26px;flex:none}
+  .ex-head b{display:block;font-size:18px}
+  .ex-head small{color:var(--muted);font-size:14px}
+  .ex-block{display:grid;gap:10px;align-content:start}
+  .ex-block h3{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .uni-mini{display:grid;gap:8px}
+  .uni-mini div{display:flex;justify-content:space-between;gap:10px;background:var(--field);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:15px}
+  .uni-mini em{font-style:normal;font-weight:800;font-size:13px;border-radius:999px;padding:2px 9px;white-space:nowrap;align-self:center}
+  .hi{background:var(--green-soft);color:var(--green)}
+  .mid{background:var(--amber-soft);color:var(--amber-ink)}
+  .plan{list-style:none;margin:0;padding:0;display:grid;gap:0}
+  .plan li{display:grid;grid-template-columns:72px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .plan li:last-child{border-bottom:0}
+  .plan span{font-weight:800;color:var(--blue-ink)}
+
+  /* AI explainer */
+  .ai{background:var(--amber-soft);border-radius:20px;padding:18px;display:grid;gap:8px}
+  .ai h3{font-size:17px}
+  .ai p{font-size:15px}
+
+  /* tabs */
+  .tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:5px;margin-bottom:12px}
+  .tab{flex:1;font:inherit;font-weight:800;font-size:15px;border:0;background:transparent;color:var(--muted);border-radius:12px;padding:10px 8px;cursor:pointer}
+  .tab[aria-selected="true"]{background:var(--blue);color:#fff}
+  .subtabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px;scrollbar-width:none}
+  .subtabs::-webkit-scrollbar{display:none}
+  .subtabs .tab{flex:none;background:var(--card);border:1.5px solid var(--line);color:var(--ink);font-size:14px;padding:9px 14px;border-radius:999px}
+  .subtabs .tab[aria-selected="true"]{background:var(--blue-soft);border-color:var(--blue);color:var(--blue-ink)}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 18px;display:grid;gap:14px}
+  .panel[hidden]{display:none}
+  .panel-top{display:flex;gap:14px;align-items:center}
+  .panel-top .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:26px;flex:none}
+  .panel ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+  .panel li{display:flex;gap:10px;font-size:16px}
+  .panel li::before{content:"✓";color:var(--green);font-weight:800}
+  .pill{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:3px 9px;margin-left:6px;vertical-align:2px}
+  .pill-free{background:var(--green-soft);color:var(--green)}
+  .pill-plus{background:var(--violet-soft);color:var(--violet)}
+
+  /* future jobs */
+  .jobs{display:grid;gap:12px}
+  .jobs-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;display:grid;gap:12px}
+  .jobs-card h3{display:flex;align-items:center;gap:8px}
+  .jobs-card ol{margin:0;padding:0;list-style:none;display:grid;gap:8px;counter-reset:j}
+  .jobs-card li{display:flex;gap:10px;align-items:baseline;font-size:16px}
+  .jobs-card li::before{counter-increment:j;content:counter(j);font-weight:800;color:var(--blue-ink);min-width:18px}
+  .jobs-card li small{color:var(--muted);font-size:14px}
+
+  /* universities */
+  .uni{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px 18px;display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+  .uni>*{min-width:0}
+  .uni-top{display:flex;gap:14px;align-items:center}
+  .uni-top img{width:58px;height:58px;flex:none}
+  .uni-search{display:flex;gap:8px;background:var(--field);border:1.5px solid var(--line);border-radius:16px;padding:6px}
+  .uni-search:focus-within{border-color:var(--blue)}
+  .uni-search input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:16px;color:var(--ink);padding:10px;outline:none}
+  .uni-search .btn{min-height:46px;padding:0 16px;font-size:16px;border-radius:12px}
+  .city-row{display:flex;flex-wrap:wrap;gap:8px}
+  .city-row a{font-size:14px;font-weight:700;text-decoration:none;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px}
+  .city-row a:hover{border-color:var(--blue);color:var(--blue-ink)}
+
+  /* plans */
+  .plans{display:grid;gap:12px}
+  .plan-card{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:20px 18px;display:grid;gap:14px;align-content:start}
+  .plan-card.plus{border-color:var(--violet)}
+  .plan-card h3{font-size:22px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .price{font-size:16px;font-weight:800;color:var(--muted);white-space:nowrap}
+  .plan-card ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+  .plan-card li{display:flex;gap:10px;font-size:16px}
+  .plan-card li::before{content:"✓";font-weight:800;color:var(--green)}
+  .plan-card.plus li::before{color:var(--violet)}
 
   /* faq */
   .faq{display:grid;gap:10px}
   details{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-  summary{list-style:none;cursor:pointer;padding:18px 52px 18px 18px;font-weight:700;font-size:17px;position:relative;min-height:56px}
+  summary{list-style:none;cursor:pointer;padding:16px 50px 16px 18px;font-weight:700;font-size:17px;position:relative;min-height:54px}
   summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:600;color:var(--blue);transition:transform .2s}
+  summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:600;color:var(--blue-ink);transition:transform .2s}
   details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
   details .a{padding:0 18px 18px;color:var(--muted);font-size:16px}
 
   /* final */
-  .final{background:var(--final-bg);color:#fff;border-radius:28px;padding:32px 22px;display:grid;gap:16px;text-align:center}
-  .final p{color:rgba(255,255,255,.75)}
-  footer{padding:28px 0 110px;color:var(--muted);font-size:14px;text-align:center}
+  .final{background:var(--final-bg);color:#fff;border-radius:28px;padding:30px 22px;display:grid;gap:14px;text-align:center;justify-items:center}
+  .final img{width:96px;height:auto}
+  .final p{color:rgba(255,255,255,.78)}
+  .final .btn{width:100%;max-width:420px}
+  footer{padding:28px 0 120px;color:var(--muted);font-size:14px;text-align:center}
 
   /* sticky bottom cta (mobile) */
   .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--bg) 60%,transparent);transform:translateY(120%);transition:transform .25s ease}
   .dock.show{transform:none}
   .dock .btn{max-width:520px;margin:0 auto}
 
-  /* copy toast */
-  .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#1f2233;color:#fff;padding:10px 16px;border-radius:12px;font-size:15px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50}
-  .toast.show{opacity:1}
-
-
-  /* theme toggle */
-  .top-actions{display:flex;align-items:center;gap:8px}
-  .theme-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0}
-  .theme-btn svg{width:18px;height:18px}
-  .theme-btn .sun{display:none}
-  :root[data-theme="dark"] .theme-btn .sun{display:block}
-  :root[data-theme="dark"] .theme-btn .moon{display:none}
-  .nav-link{font-weight:700;font-size:15px;text-decoration:none;color:var(--muted);padding:8px 6px;display:none}
-  .nav-link:hover{color:var(--blue)}
-
-  /* mascot */
-  .hero-mascot{position:absolute;right:-8px;bottom:-6px;width:100px;height:auto;z-index:0;pointer-events:none;filter:drop-shadow(0 12px 18px rgba(0,0,0,.25))}
-  .hero-copy{position:relative;z-index:1}
-  .hero-copy .lead,.hero-copy h1{padding-right:0}
-
-  /* universities */
-  .uni{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:24px 18px;display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
-  .uni>*{min-width:0}
-  .uni>div:not(.uni-cards){grid-template-columns:minmax(0,1fr)}
-  .uni-top{display:flex;gap:14px;align-items:flex-start}
-  .uni-top img{width:62px;height:62px;flex:none}
-  .uni-feats{display:flex;flex-wrap:wrap;gap:8px}
-  .uni-feats span{font-size:14px;font-weight:700;background:var(--blue-soft);color:var(--blue);border-radius:999px;padding:7px 12px}
-  :root[data-theme="dark"] .uni-feats span{color:#b0b6ff}
-  .uni-search{display:flex;gap:8px;background:var(--field);border:1.5px solid var(--line);border-radius:16px;padding:6px}
-  .uni-search:focus-within{border-color:var(--blue)}
-  .uni-search input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:16px;color:var(--ink);padding:10px 10px;outline:none}
-  .uni-search .btn{min-height:46px;padding:0 18px;font-size:16px;border-radius:12px}
-  .city-row{display:flex;flex-wrap:wrap;gap:8px}
-  .city-row a{font-size:14px;font-weight:700;text-decoration:none;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--ink)}
-  .city-row a:hover{border-color:var(--blue);color:var(--blue)}
-  .uni-cards{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;-webkit-overflow-scrolling:touch}
-  .uni-card{scroll-snap-align:start;text-decoration:none;background:var(--bg);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid}
-  .uni-card img{width:100%;height:140px;object-fit:cover;display:block;background:var(--blue-soft)}
-  .uni-card div{padding:12px 14px 14px}
-  .uni-card small{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em}
-  :root[data-theme="dark"] .uni-card small{color:#b0b6ff}
-  .uni-card b{display:block;font-size:16px;margin:4px 0}
-  .uni-card p{font-size:14px;color:var(--muted)}
-  .uni-card:hover{border-color:var(--blue)}
-
   /* Venti helper */
-  .venti-fab{position:fixed;right:14px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:45;width:64px;height:64px;border-radius:50%;border:0;padding:0;background:var(--card);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;transition:transform .15s}
+  .venti-fab{position:fixed;right:14px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:45;width:62px;height:62px;border-radius:50%;border:0;padding:0;background:var(--card);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;transition:transform .15s}
   .venti-fab:hover{transform:scale(1.06)}
-  .venti-fab img{width:56px;height:56px}
+  .venti-fab img{width:54px;height:54px}
   .venti-fab::after{content:"";position:absolute;top:4px;right:4px;width:12px;height:12px;border-radius:50%;background:#22c55e;border:2px solid var(--card)}
   .venti{position:fixed;right:12px;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;max-width:400px;margin-left:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);display:none;flex-direction:column;max-height:min(560px,80vh);overflow:hidden}
   .venti.open{display:flex}
-  .venti-head{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--blue);color:#fff}
+  .venti-head{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--blue);color:#fff}
   .venti-head img{width:40px;height:40px;background:#fff;border-radius:50%}
   .venti-head b{display:block;font-size:16px}
   .venti-head small{opacity:.85;font-size:13px}
@@ -219,36 +262,44 @@
   .msg{max-width:88%;padding:10px 13px;border-radius:16px;font-size:15px;line-height:1.45}
   .msg.bot{background:var(--blue-soft);border-bottom-left-radius:6px;align-self:flex-start}
   .msg.me{background:var(--blue);color:#fff;border-bottom-right-radius:6px;align-self:flex-end}
-  .msg a{color:inherit;font-weight:700}
+  .msg a{color:inherit;font-weight:800}
   .venti-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 14px}
   .venti-quick button{font:inherit;font-size:14px;font-weight:700;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:8px 12px;cursor:pointer}
   .venti-quick button:hover{border-color:var(--blue)}
+
+  .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#1f2233;color:#fff;padding:10px 16px;border-radius:12px;font-size:15px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:70}
+  .toast.show{opacity:1}
+
   @media (min-width:760px){
+    section{padding-top:80px}
     .nav-link{display:inline-block}
+    .hero{padding-top:28px}
+    .hero-card{grid-template-columns:1.2fr .8fr;padding:52px 48px;align-items:center;gap:40px}
+    .hero h1{padding-right:0}
     .hero-mascot{display:none}
-    .uni{padding:36px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;column-gap:36px}
-    .uni-cards{grid-column:1/-1;grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible}
-    .venti-fab{bottom:24px;right:24px;width:72px;height:72px}
-    .venti-fab img{width:62px;height:62px}
-    .venti{right:24px;bottom:24px;left:auto;width:380px}
-    section{padding:80px 0}
-    .hero{padding-top:32px}
-    .hero-card{grid-template-columns:1.15fr .85fr;padding:48px 44px;align-items:center;gap:40px}
-    .hero-cta{grid-template-columns:auto auto;justify-content:start}
-    .hero-side{display:grid;gap:10px;position:relative;z-index:1}
-    .mini{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:16px;display:flex;gap:12px;align-items:center}
-    .mini .ico{background:rgba(255,255,255,.95);width:44px;height:44px;font-size:22px}
-    .mini b{display:block;font-size:16px}
-    .mini small{color:rgba(255,255,255,.75);font-size:14px}
-    .quiz{max-width:640px;margin:28px auto 0;padding:28px}
-    .feats{grid-template-columns:repeat(2,1fr)}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:10px}
+    .hero-cta .btn{white-space:nowrap}
+    .hero-side{display:grid;justify-items:center;position:relative;z-index:1}
+    .hero-side img{width:min(100%,280px);filter:drop-shadow(0 20px 30px rgba(0,0,0,.3))}
+    .bubble{background:#fff;color:#171a2b;border-radius:18px;padding:12px 16px;font-weight:700;font-size:16px;margin-bottom:-6px;position:relative;box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
+    .bubble::after{content:"";position:absolute;left:50%;bottom:-8px;width:16px;height:16px;background:#fff;transform:translateX(-50%) rotate(45deg)}
+    .test{max-width:680px;margin:0 auto;padding:30px}
     .steps{grid-template-columns:repeat(3,1fr)}
-    .parents{grid-template-columns:1.4fr 1fr;align-items:center;padding:36px}
+    .stepc{flex-direction:column}
+    .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .example{padding:28px}
+    .panel{padding:28px}
+    .jobs{grid-template-columns:1fr 1fr}
+    .uni{padding:36px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;column-gap:36px}
+    .plans{grid-template-columns:1fr 1fr}
     .faq{max-width:760px}
-    .final{padding:52px;justify-items:center}
-    .final .btn{min-width:340px}
+    .final{padding:52px}
     .dock{display:none}
     footer{padding-bottom:40px}
+    .venti-fab{bottom:24px;right:24px;width:70px;height:70px}
+    .venti-fab img{width:60px;height:60px}
+    .venti{right:24px;bottom:24px;left:auto;width:380px}
+    .row2{grid-template-columns:1fr 1fr}
   }
 </style>
 </head>
@@ -266,7 +317,9 @@
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Ventorme"><i>V</i>Ventorme</a>
     <div class="top-actions">
-      <a class="nav-link" href="#uni">Подбор вузов</a>
+      <a class="nav-link" href="#test">Тест</a>
+      <a class="nav-link" href="#uni">Вузы</a>
+      <a class="nav-link" href="#plans">Тарифы</a>
       <button type="button" class="theme-btn" id="themeBtn" aria-label="Сменить тему">
         <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
         <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
@@ -277,165 +330,288 @@
 </header>
 
 <main id="top">
-  <!-- 1. Первый экран: польза + кнопка видны без прокрутки -->
+  <!-- 1. Первый экран: одно предложение и одна главная кнопка -->
   <div class="hero">
     <div class="wrap">
       <div class="hero-card">
         <img class="hero-mascot" src="assets/venti.svg" alt="">
-        <div class="hero-copy" style="display:grid;gap:18px">
-          <div class="chips"><span class="chip">Для 8–11 классов</span><span class="chip">ЕНТ · IELTS · SAT</span></div>
-          <h1>Пойми, кем стать <span>и куда поступать</span></h1>
-          <p class="lead">Профтест за 5 минут, подходящие вузы и шансы на грант по ЕНТ — в одном месте.</p>
+        <div class="hero-copy">
+          <h1>Не знаешь, кем стать?</h1>
+          <p class="lead">Ventorme поможет выбрать профессию и найти подходящий университет.</p>
           <div class="hero-cta">
-            <a class="btn btn-white cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">
+            <a class="btn btn-white" href="#test">Узнать свою профессию</a>
+            <a class="btn btn-ghost cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">
               <svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.2-.1-2.3-.4-3.5z"/></svg>
-              Начать бесплатно
+              Регистрация через Google
             </a>
-            <a class="btn btn-ghost" href="#quiz">Тест за 1 минуту ↓</a>
           </div>
-          <div class="trust"><span>Бесплатно</span><span>Вход через Google за 10 секунд</span><span>Без карты</span></div>
+          <div class="hero-note"><span>Тест бесплатный</span><span>Без регистрации</span><span>2 минуты</span></div>
         </div>
         <div class="hero-side" aria-hidden="true">
-          <img src="assets/venti.svg" alt="" style="width:150px;height:auto;justify-self:center;margin-bottom:-6px;filter:drop-shadow(0 14px 22px rgba(0,0,0,.25))">
-          <div class="mini"><span class="ico">🧭</span><div><b>Профтест</b><small>какие профессии тебе подходят</small></div></div>
-          <div class="mini"><span class="ico">🎓</span><div><b>Подбор вузов</b><small>в Казахстане и за рубежом</small></div></div>
-          <div class="mini"><span class="ico">🧮</span><div><b>Калькулятор гранта</b><small>по баллам ЕНТ</small></div></div>
-          <div class="mini"><span class="ico">🤖</span><div><b>ИИ-помощник Venti</b><small>ответит на вопросы о поступлении</small></div></div>
-        </div>
-      </div>
-
-      <!-- 2. Мини-тест: короткий вход, результат открывается в Ventorme -->
-      <div class="quiz" id="quiz" aria-live="polite">
-        <div id="qBox">
-          <div class="quiz-head"><span class="eyebrow">Разминка · 3 вопроса</span><span class="step" id="qStep">1 из 3</span></div>
-          <div class="bar"><i id="qBar"></i></div>
-          <div class="q" id="qText"></div>
-          <div class="opts" id="qOpts"></div>
-        </div>
-        <div class="result" id="qRes">
-          <span class="res-tag">Твоё направление</span>
-          <div class="res-title" id="rTitle"></div>
-          <p id="rText" style="color:var(--muted)"></p>
-          <ul class="res-list" id="rList"></ul>
-          <div class="lock">🔒 Это быстрая прикидка. Полный профтест с профессиями, вузами и шансами на грант — в Ventorme, бесплатно.</div>
-          <a class="btn btn-primary cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Открыть полный результат</a>
-          <button type="button" class="linkbtn" id="qAgain">Пройти заново</button>
+          <div class="bubble">Йо! Помогу выбрать путь 🤙</div>
+          <img src="assets/venti.svg" alt="">
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 3. Что получишь после регистрации -->
-  <section id="what">
+  <!-- 2. Бесплатный тест без регистрации -->
+  <section id="test" style="padding-top:22px">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">После регистрации</span>
-        <h2>Что ты получишь сразу</h2>
-        <p>Всё, что нужно, чтобы выбрать профессию и поступить, — без поиска по десяти сайтам.</p>
-      </div>
-      <div class="feats">
-        <a class="feat cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109"><span class="ico" style="background:var(--blue-soft)">🧭</span><div><h3>Профтест</h3><p>Узнаешь, какие профессии подходят именно тебе.</p></div><span class="go">›</span></a>
-        <a class="feat cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109"><span class="ico" style="background:var(--green-soft)">🎓</span><div><h3>Подбор вузов</h3><p>Список университетов под твои интересы и баллы.</p></div><span class="go">›</span></a>
-        <a class="feat cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109"><span class="ico" style="background:var(--orange-soft)">🧮</span><div><h3>Калькулятор гранта по ЕНТ</h3><p>Посмотришь, хватает ли баллов на грант.</p></div><span class="go">›</span></a>
-        <a class="feat cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109"><span class="ico" style="background:var(--violet-soft)">🌍</span><div><h3>Подготовка к IELTS и SAT</h3><p>Если хочешь учиться за рубежом.</p></div><span class="go">›</span></a>
-        <a class="feat cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109"><span class="ico" style="background:var(--blue-soft)">✍️</span><div><h3>Помощь с эссе</h3><p>Мотивационное письмо, которое не стыдно отправить.</p></div><span class="go">›</span></a>
-        <a class="feat cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109"><span class="ico" style="background:var(--green-soft)">🤖</span><div><h3>ИИ-помощник Venti</h3><p>Задай любой вопрос о поступлении — в любое время.</p></div><span class="go">›</span></a>
+      <div class="test" aria-live="polite">
+        <div id="tBox">
+          <div class="test-head"><span class="eyebrow">Бесплатный тест · без регистрации</span><span class="step" id="tStep">1 из 6</span></div>
+          <div class="bar"><i id="tBar"></i></div>
+          <div class="q" id="tText"></div>
+          <div class="opts" id="tOpts"></div>
+          <button type="button" class="back" id="tBack" hidden>← Назад</button>
+        </div>
+        <div class="result" id="tRes">
+          <div><span class="tag tag-green">Предварительный результат</span></div>
+          <div class="res-title" id="rTitle"></div>
+          <div class="profs" id="rProfs"></div>
+          <p class="src" id="rAlso"></p>
+          <div class="row2">
+            <a class="btn btn-primary cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Получить подробный разбор</a>
+            <a class="btn btn-outline" href="#example">Посмотреть пример результата</a>
+          </div>
+          <p class="lock">🔒 Это прикидка по 6 вопросам. Подробный AI-профтест, вузы под твои баллы и план — в Ventorme.</p>
+          <p class="src" id="rSrc"></p>
+          <button type="button" class="back" id="tAgain">Пройти заново</button>
+        </div>
       </div>
     </div>
   </section>
 
-
-  <!-- 3a. Подбор вузов (перенесено из CampusLens) -->
-  <section id="uni" style="padding-top:0;scroll-margin-top:70px">
+  <!-- 3. Как работает Ventorme -->
+  <section id="how">
     <div class="wrap">
-      <div class="uni">
-        <div style="display:grid;gap:14px">
-          <div class="uni-top">
-            <img src="assets/venti.svg" alt="">
-            <div style="display:grid;gap:8px">
-              <span class="eyebrow">Подбор вузов</span>
-              <h2 style="font-size:clamp(24px,5vw,34px)">Посмотри вуз изнутри, а не по буклету</h2>
+      <div class="sec-head">
+        <span class="eyebrow">Как работает Ventorme</span>
+        <h2>Три простых шага</h2>
+      </div>
+      <div class="steps">
+        <div class="stepc"><span class="ico" style="background:var(--blue-soft)"><b>1</b>💬</span><div><h3>Расскажи о себе</h3><p>Интересы, любимые предметы и цели.</p></div></div>
+        <div class="stepc"><span class="ico" style="background:var(--green-soft)"><b>2</b>🎯</span><div><h3>Получи рекомендации</h3><p>Профессии и университеты, которые тебе подходят.</p></div></div>
+        <div class="stepc"><span class="ico" style="background:var(--violet-soft)"><b>3</b>🗺️</span><div><h3>Создай план поступления</h3><p>Шаги и дедлайны: экзамены, эссе, документы.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Пример результата (демонстрация) -->
+  <section id="example">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Что ты получишь</span>
+        <h2>Пример результата</h2>
+        <p>Так выглядит профиль школьника после теста и регистрации.</p>
+      </div>
+      <div class="example">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <div class="ex-head"><span class="avatar">🧑‍🎓</span><div><b>Ученик 10 класса, Алматы</b><small>любит математику, физику и игры</small></div></div>
+          <span class="tag tag-amber">Пример · данные условные</span>
+        </div>
+        <div class="ex-grid">
+          <div class="ex-block">
+            <h3>Подходящие профессии</h3>
+            <div class="match">
+              <div class="match-row"><b>Data-аналитик</b><span>87%</span><i style="--w:87%"></i></div>
+              <div class="match-row"><b>Разработчик ПО</b><span>81%</span><i style="--w:81%"></i></div>
+              <div class="match-row"><b>Инженер-энергетик</b><span>64%</span><i style="--w:64%"></i></div>
+            </div>
+            <h3 style="margin-top:8px">Университеты</h3>
+            <div class="uni-mini">
+              <div>Satbayev University · IT <em class="hi">шанс высокий</em></div>
+              <div>Nazarbayev University · CS <em class="mid">шанс средний</em></div>
+              <div>КазНУ · Информатика <em class="hi">шанс высокий</em></div>
             </div>
           </div>
-          <p style="color:var(--muted)">Введи название — Venti соберёт фото кампуса, общежитий, аудиторий и библиотек, покажет цены, условия поступления, место на карте и отзывы. Можно сравнить два вуза.</p>
-          <div class="uni-feats"><span>📍 Карта</span><span>📸 Фото корпусов</span><span>💸 Цены и грант</span><span>📋 Условия поступления</span><span>⭐ Отзывы</span><span>⚖️ Сравнение</span></div>
+          <div class="ex-block">
+            <h3>План поступления</h3>
+            <ol class="plan">
+              <li><span>Октябрь</span>Диагностика IELTS и ЕНТ</li>
+              <li><span>Ноя–Янв</span>Подготовка к IELTS 6.5 и пробные тесты</li>
+              <li><span>Февраль</span>Регистрация на NUET</li>
+              <li><span>Март</span>Мотивационное эссе</li>
+              <li><span>Июнь</span>ЕНТ и подача документов</li>
+            </ol>
+          </div>
         </div>
+        <a class="btn btn-primary cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Получить свой результат</a>
+      </div>
+      <div class="ai" style="margin-top:12px">
+        <h3>🤖 Как ИИ подбирает рекомендации</h3>
+        <p>Ventorme сравнивает твои оценки, IELTS/TOEFL, SAT, активности и бюджет с требованиями программ и профилями поступивших студентов. Это оценка на основе данных, а не гарантия поступления: используй её как помощь при выборе.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Возможности: разделено на подразделы, чтобы не перегружать -->
+  <section id="what">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Что внутри</span>
+        <h2>Выбери, что нужно тебе</h2>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Для кого">
+        <button class="tab" role="tab" aria-selected="true" data-aud="st">🎒 Ученикам</button>
+        <button class="tab" role="tab" aria-selected="false" data-aud="pa">👨‍👩‍👧 Родителям</button>
+      </div>
+      <div id="audSt">
+        <div class="subtabs" role="tablist" aria-label="Раздел">
+          <button class="tab" role="tab" aria-selected="true" data-p="p1">Профессия</button>
+          <button class="tab" role="tab" aria-selected="false" data-p="p2">Поступление</button>
+          <button class="tab" role="tab" aria-selected="false" data-p="p3">Экзамены</button>
+          <button class="tab" role="tab" aria-selected="false" data-p="p4">Эссе и гранты</button>
+        </div>
+        <div class="panel" id="p1">
+          <div class="panel-top"><span class="ico" style="background:var(--blue-soft)">🧭</span><h3>Найди свою профессию</h3></div>
+          <ul><li><span>Мини-профтест <span class="pill pill-free">Free</span></span></li><li><span>Полный AI-профтест по интересам <span class="pill pill-plus">Plus</span></span></li></ul>
+          <a class="btn btn-outline" href="#test">Пройти бесплатный тест</a>
+        </div>
+        <div class="panel" id="p2" hidden>
+          <div class="panel-top"><span class="ico" style="background:var(--green-soft)">🎓</span><h3>Подбери вуз и план</h3></div>
+          <ul><li><span>Подбор вузов по баллам и бюджету <span class="pill pill-plus">Plus</span></span></li><li><span>Пошаговый план с дедлайнами <span class="pill pill-plus">Plus</span></span></li><li>Фото кампусов, цены и требования — на этом сайте</li></ul>
+          <a class="btn btn-outline" href="#uni">Подобрать университет</a>
+        </div>
+        <div class="panel" id="p3" hidden>
+          <div class="panel-top"><span class="ico" style="background:var(--orange-soft)">📝</span><h3>Подготовься к экзаменам</h3></div>
+          <ul><li><span>Проверка уровня IELTS и SAT <span class="pill pill-free">Free</span></span></li><li><span>Подготовка с пробными тестами <span class="pill pill-plus">Plus</span></span></li></ul>
+          <a class="btn btn-outline cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Проверить уровень бесплатно</a>
+        </div>
+        <div class="panel" id="p4" hidden>
+          <div class="panel-top"><span class="ico" style="background:var(--violet-soft)">✍️</span><h3>Эссе, гранты, документы</h3></div>
+          <ul><li><span>Заполнение портфолио <span class="pill pill-free">Free</span></span></li><li><span>Помощь с эссе и заявками <span class="pill pill-plus">Plus</span></span></li><li>Поиск грантов и стипендий</li></ul>
+          <a class="btn btn-outline cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Начать портфолио</a>
+        </div>
+      </div>
+      <div id="audPa" hidden>
+        <div class="panel">
+          <div class="panel-top"><span class="ico" style="background:var(--violet-soft)">👀</span><h3>Прогресс без допросов</h3></div>
+          <ul><li>Дедлайны и статусы заявок</li><li>Бюджет по каждому вузу</li><li>Общий прогресс ребёнка</li><li>Личные переписки ребёнка с ИИ родителям не видны</li></ul>
+          <a class="btn btn-outline cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Зарегистрироваться</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Актуальность: какие профессии будут нужны -->
+  <section id="future">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Актуальность</span>
+        <h2>Какие профессии будут нужны</h2>
+        <p>Выбирай не только по интересам, но и по спросу.</p>
+      </div>
+      <div class="jobs">
+        <div class="jobs-card">
+          <h3>🌍 Быстрее всего растут в мире</h3>
+          <ol>
+            <li><span>Специалисты по большим данным</span></li>
+            <li><span>Финтех-инженеры</span></li>
+            <li><span>Специалисты по ИИ и машинному обучению</span></li>
+            <li><span>Разработчики ПО и приложений</span></li>
+          </ol>
+          <p class="src">Также в топе: кибербезопасность, инженеры возобновляемой энергетики, специалисты по электромобилям. Источник: <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener">WEF, Future of Jobs Report 2025</a></p>
+        </div>
+        <div class="jobs-card">
+          <h3>🇰🇿 Больше всего вакансий в Казахстане</h3>
+          <ol>
+            <li><span>Учителя средней школы <small>~29,5 тыс.</small></span></li>
+            <li><span>Средний медперсонал <small>~23,3 тыс.</small></span></li>
+            <li><span>Воспитатели <small>~22 тыс.</small></span></li>
+            <li><span>Работники по уходу за больными <small>~19 тыс.</small></span></li>
+          </ol>
+          <p class="src">Краткосрочный прогноз ЦРТР на 2025 год по данным Enbek.kz. Источник: <a href="https://finratings.kz/news/2731-bezrabotitsa-ne-grozit-kakie-spetsialisty-nuzhny-kazakhstanu-v-2025-godu/" target="_blank" rel="noopener">Finratings.kz</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Подбор вузов (перенесено из CampusLens) -->
+  <section id="uni">
+    <div class="wrap">
+      <div class="uni">
         <div style="display:grid;gap:12px">
+          <div class="uni-top">
+            <img src="assets/venti.svg" alt="">
+            <div style="display:grid;gap:6px">
+              <span class="eyebrow">Подбор вузов</span>
+              <h2 style="font-size:clamp(24px,5vw,32px)">Посмотри вуз изнутри</h2>
+            </div>
+          </div>
+          <p style="color:var(--muted)">Фото кампуса и общежитий, цены, требования, карта и отзывы. Можно сравнить два вуза.</p>
+        </div>
+        <div style="display:grid;gap:12px;grid-template-columns:minmax(0,1fr)">
           <form class="uni-search" action="vuzy/" method="get" role="search">
             <input name="q" placeholder="КазНУ, Nazarbayev University, MIT…" aria-label="Название вуза" autocomplete="off" required>
             <button class="btn btn-primary" type="submit">Найти</button>
           </form>
           <div class="city-row">
-            <a href="vuzy/?country=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD&city=%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B">Вузы Алматы</a>
-            <a href="vuzy/?country=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD&city=%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0">Вузы Астаны</a>
-            <a href="vuzy/?country=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD&city=%D0%A8%D1%8B%D0%BC%D0%BA%D0%B5%D0%BD%D1%82">Вузы Шымкента</a>
-            <a href="vuzy/">Все возможности →</a>
+            <a href="vuzy/?country=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD&city=%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B">Алматы</a>
+            <a href="vuzy/?country=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD&city=%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0">Астана</a>
+            <a href="vuzy/?country=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD&city=%D0%A8%D1%8B%D0%BC%D0%BA%D0%B5%D0%BD%D1%82">Шымкент</a>
+            <a href="vuzy/">Подобрать университет →</a>
           </div>
         </div>
-        <div class="uni-cards">
-          <a class="uni-card" href="vuzy/?q=Nazarbayev%20University"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Nazarbayev_University_2.jpg/640px-Nazarbayev_University_2.jpg" alt="Кампус Nazarbayev University"><div><small>Астана</small><b>Nazarbayev University</b><p>Грант NUET · общежитие ~$55/мес · IELTS 6.0</p></div></a>
-          <a class="uni-card" href="vuzy/?q=Al-Farabi%20Kazakh%20National%20University"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/72/Al-Farabi_KazNU_rektorat.jpg" alt="Главный корпус КазНУ"><div><small>Алматы</small><b>КазНУ им. аль-Фараби</b><p>Госгрант · ЕНТ от 65 · общежитие для иногородних</p></div></a>
-          <a class="uni-card" href="vuzy/?q=Satbayev%20University"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Satbayev_University_2.jpg/640px-Satbayev_University_2.jpg" alt="Satbayev University"><div><small>Алматы</small><b>Satbayev University</b><p>Госгрант · ЕНТ ориентир от 80 · общежитие онлайн</p></div></a>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. Как это работает -->
-  <section style="padding-top:0">
+  <!-- 8. Free и Plus (по данным ventorme.ai) -->
+  <section id="plans">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Как начать</span>
-        <h2>Три шага, пара минут</h2>
+        <span class="eyebrow">Тарифы</span>
+        <h2>Что бесплатно, а что в Plus</h2>
+        <p>Начать можно бесплатно — карта не нужна.</p>
       </div>
-      <div class="steps">
-        <div class="stepc"><h3>Зарегистрируйся</h3><p>Через Google в один тап или по почте. Бесплатно.</p></div>
-        <div class="stepc"><h3>Пройди профтест</h3><p>Ответь на вопросы о себе — займёт около 5 минут.</p></div>
-        <div class="stepc"><h3>Получи план</h3><p>Профессии, вузы и что подтянуть, чтобы поступить.</p></div>
-      </div>
-      <a class="btn btn-primary cta" style="margin-top:20px" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Начать бесплатно</a>
-    </div>
-  </section>
-
-  <!-- 5. Родителям -->
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="parents">
-        <div style="display:grid;gap:10px">
-          <span class="eyebrow" style="color:var(--violet)">Родителям</span>
-          <h2 style="font-size:clamp(24px,5vw,32px)">Можно смотреть прогресс ребёнка</h2>
-          <p>В Ventorme есть отдельный кабинет для родителей: видно, какие шаги пройдены и что осталось до поступления.</p>
+      <div class="plans">
+        <div class="plan-card">
+          <h3>Free <span class="price">0 ₸</span></h3>
+          <ul><li>Мини-профтест</li><li>Проверка уровня IELTS</li><li>Проверка уровня SAT</li><li>Заполнение портфолио</li></ul>
+          <a class="btn btn-primary cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Попробовать бесплатно</a>
         </div>
-        <a class="btn btn-outline cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Зарегистрировать ребёнка</a>
+        <div class="plan-card plus">
+          <h3>Plus <span class="price">29 900 ₸/мес</span></h3>
+          <ul><li>Полный AI-профтест</li><li>Подбор вузов по баллам и бюджету</li><li>Пошаговый план с дедлайнами</li><li>Подготовка к экзаменам с пробными тестами</li><li>Помощь с эссе и заявками</li></ul>
+          <p class="src">Есть годовой тариф; первый месячный платёж засчитывается при переходе на год. Цены — по данным ventorme.ai.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. Частые вопросы -->
-  <section style="padding-top:0" id="faq">
+  <!--
+    ОТЗЫВЫ. Добавляйте только настоящие отзывы школьников, которые пользовались Ventorme,
+    и только с их разрешения (имя, класс, фото — по согласию). Шаблон одной карточки:
+    <figure class="jobs-card"><blockquote style="margin:0">«Текст отзыва»</blockquote>
+      <figcaption class="src">Имя, 11 класс, город</figcaption></figure>
+  -->
+
+  <!-- 9. Частые вопросы -->
+  <section id="faq">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Вопросы</span>
-        <h2>Что обычно спрашивают</h2>
+        <h2>Коротко о главном</h2>
       </div>
       <div class="faq">
-        <details><summary>Это правда бесплатно?</summary><div class="a">Да, регистрация и старт бесплатные, карту привязывать не нужно. Платный тариф Plus — по желанию, если захочешь больше возможностей.</div></details>
-        <details><summary>Что я получу после регистрации?</summary><div class="a">Доступ к профтесту, подбору вузов, калькулятору гранта по ЕНТ, подготовке к IELTS и SAT, помощи с эссе и ИИ-помощнику Venti.</div></details>
-        <details><summary>Можно ли поступить, если оценки не идеальные?</summary><div class="a">Да. Ventorme подберёт вузы под твои реальные баллы и покажет, что можно подтянуть, чтобы шансов стало больше.</div></details>
-        <details><summary>Родители могут видеть прогресс?</summary><div class="a">Да, для родителей есть отдельный раздел с прогрессом ребёнка.</div></details>
-        <details><summary>Безопасны ли мои данные?</summary><div class="a">Для регистрации нужна только почта или Google-аккаунт. Как Ventorme хранит данные, написано в политике конфиденциальности на <a href="https://ventorme.ai" target="_blank" rel="noopener">ventorme.ai</a>.</div></details>
-        <details><summary>Не получается войти через Google</summary><div class="a">Если ты открыл ссылку из Instagram или Facebook, открой её в обычном браузере (⋯ → «Открыть в браузере») или зарегистрируйся по почте и паролю.</div></details>
+        <details><summary>Что я получу после регистрации?</summary><div class="a">Сразу и бесплатно: мини-профтест, проверку уровня IELTS и SAT и заполнение портфолио. Этого хватает, чтобы выбрать направление и понять, чего не хватает для поступления.</div></details>
+        <details><summary>Можно ли поступить, если оценки не идеальные?</summary><div class="a">Да. Ventorme подбирает вузы под твой реальный профиль, показывает, где шансы выше, и что можно усилить.</div></details>
+        <details><summary>Безопасны ли мои данные?</summary><div class="a">По словам Ventorme, данные шифруются и не передаются третьим лицам без согласия. Подробности — в политике конфиденциальности на <a href="https://ventorme.ai" target="_blank" rel="noopener">ventorme.ai</a>.</div></details>
+        <details><summary>Не получается войти через Google</summary><div class="a">Если открыл ссылку из Instagram, открой её в обычном браузере (⋯ → «Открыть в браузере») или зарегистрируйся по почте.</div></details>
       </div>
     </div>
   </section>
 
-  <!-- 7. Финальный призыв -->
-  <section style="padding-top:0">
+  <!-- 10. Финальный призыв -->
+  <section>
     <div class="wrap">
       <div class="final">
-        <h2>Выбери будущее, а не просто вуз</h2>
-        <p>Регистрация займёт 10 секунд. Профтест — 5 минут.</p>
-        <a class="btn btn-white cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Зарегистрироваться бесплатно</a>
+        <img src="assets/venti.svg" alt="">
+        <h2>Начни с теста — это бесплатно</h2>
+        <p>2 минуты без регистрации. Сохранить результат и получить план — в Ventorme.</p>
+        <a class="btn btn-white" href="#test">Пройти бесплатный тест</a>
       </div>
     </div>
   </section>
@@ -445,7 +621,7 @@
   <div class="wrap">Ventorme · <a href="https://ventorme.ai" target="_blank" rel="noopener">ventorme.ai</a></div>
 </footer>
 
-<div class="dock" id="dock"><a class="btn btn-primary cta" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-109">Начать бесплатно</a></div>
+<div class="dock" id="dock"><a class="btn btn-primary" href="#test" id="dockBtn">Узнать свою профессию</a></div>
 
 <button type="button" class="venti-fab" id="ventiFab" aria-label="Открыть помощника Venti"><img src="assets/venti.svg" alt=""></button>
 <div class="venti" id="venti" role="dialog" aria-label="Помощник Venti">
@@ -461,59 +637,168 @@
 
 <script>
 (function(){
-  var TEAM_URL = document.querySelector('a.cta').href; // единая ссылка команды
-
-  /* --- Встроенный браузер Instagram / Facebook --- */
-  var ua = navigator.userAgent || '';
-  var inApp = /Instagram|FBAN|FBAV|FB_IAB|FBIOS|FB4A/i.test(ua);
-  var android = /Android/i.test(ua);
-  if (inApp) {
-    document.getElementById('iab').classList.add('show');
-    if (android) {
-      // На Android открываем регистрацию сразу во внешнем браузере (там работает вход через Google)
-      var u = TEAM_URL.replace(/^https?:\/\//,'');
-      var intent = 'intent://' + u + '#Intent;scheme=https;S.browser_fallback_url=' + encodeURIComponent(TEAM_URL) + ';end';
-      document.querySelectorAll('a.cta').forEach(function(a){ a.href = intent; });
-    }
-  }
-  document.getElementById('copyLink').addEventListener('click', function(){
-    var url = location.href.split('#')[0];
-    var done = function(){ var t=document.getElementById('toast'); t.classList.add('show'); setTimeout(function(){t.classList.remove('show')},2200); };
-    if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, function(){ prompt('Скопируй ссылку:', url); });
-    else prompt('Скопируй ссылку:', url);
-  });
-
-  /* --- Нижняя кнопка появляется, когда первый экран ушёл --- */
-  var dock = document.getElementById('dock');
-  var heroBtn = document.querySelector('.hero-cta');
-  var finalSec = document.querySelector('.final');
-  if ('IntersectionObserver' in window) {
-    var heroVis = true, finalVis = false;
-    var upd = function(){ dock.classList.toggle('show', !heroVis && !finalVis); };
-    new IntersectionObserver(function(e){ heroVis = e[0].isIntersecting; upd(); }).observe(heroBtn);
-    new IntersectionObserver(function(e){ finalVis = e[0].isIntersecting; upd(); }).observe(finalSec);
-  }
-
+  var REG = document.querySelector('a.cta').href; // ссылка команды
+  var el = function(id){ return document.getElementById(id); };
 
   /* --- Тема --- */
   var root = document.documentElement;
-  document.getElementById('themeBtn').addEventListener('click', function(){
+  el('themeBtn').addEventListener('click', function(){
     var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('ventorme-theme', next); } catch(e) {}
   });
 
-  /* --- Venti: быстрые ответы (без сервера) --- */
-  var REG = document.querySelector('a.cta').href;
-  var V = {
-    start:{a:'Йо! Я Venti 🦍 Помогу разобраться, с чего начать. Что интересно?', q:['what','uni','grant','free']},
-    what:{u:'Что даёт Ventorme?', a:'Профтест, подбор вузов, калькулятор гранта по ЕНТ, подготовку к IELTS и SAT, помощь с эссе. А ещё я отвечаю на вопросы о поступлении — после регистрации.', q:['uni','free','reg']},
-    uni:{u:'Хочу подобрать вуз', a:'Открой <a href="vuzy/">Подбор вузов</a>: фото кампуса и общаги, цены, условия поступления, карта и отзывы. Или напиши название вуза в поиске на этой странице.', q:['grant','reg']},
-    grant:{u:'Хватит ли баллов на грант?', a:'Это покажет калькулятор гранта по ЕНТ внутри Ventorme — вводишь баллы и видишь шансы по специальностям.', q:['reg','free']},
-    free:{u:'Это бесплатно?', a:'Да, регистрация и старт бесплатные, карта не нужна. Вход через Google — за 10 секунд.', q:['reg','what']},
-    reg:{u:'Зарегистрироваться', a:'Погнали! <a class="cta-in" href="'+REG+'">Открыть регистрацию →</a>', q:['what','uni']}
+  /* --- Встроенный браузер Instagram / Facebook --- */
+  var ua = navigator.userAgent || '';
+  var inApp = /Instagram|FBAN|FBAV|FB_IAB|FBIOS|FB4A/i.test(ua);
+  if (inApp) {
+    el('iab').classList.add('show');
+    if (/Android/i.test(ua)) {
+      var intent = 'intent://' + REG.replace(/^https?:\/\//,'') + '#Intent;scheme=https;S.browser_fallback_url=' + encodeURIComponent(REG) + ';end';
+      document.querySelectorAll('a.cta').forEach(function(a){ a.href = intent; });
+      REG = intent;
+    }
+  }
+  el('copyLink').addEventListener('click', function(){
+    var url = location.href.split('#')[0];
+    var done = function(){ var t=el('toast'); t.classList.add('show'); setTimeout(function(){t.classList.remove('show')},2200); };
+    if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, function(){ prompt('Скопируй ссылку:', url); });
+    else prompt('Скопируй ссылку:', url);
+  });
+
+  /* --- Нижняя кнопка: появляется, когда первый экран ушёл --- */
+  var dock = el('dock'), dockBtn = el('dockBtn');
+  if ('IntersectionObserver' in window) {
+    var heroVis = true, testVis = false, finalVis = false;
+    var upd = function(){ dock.classList.toggle('show', !heroVis && !testVis && !finalVis); };
+    new IntersectionObserver(function(e){ heroVis = e[0].isIntersecting; upd(); }).observe(document.querySelector('.hero-cta'));
+    new IntersectionObserver(function(e){ testVis = e[0].isIntersecting; upd(); }).observe(document.querySelector('.test'));
+    new IntersectionObserver(function(e){ finalVis = e[0].isIntersecting; upd(); }).observe(document.querySelector('.final'));
+  }
+
+  /* --- Вкладки «Ученикам / Родителям» и подразделы --- */
+  document.querySelectorAll('[data-aud]').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('[data-aud]').forEach(function(x){ x.setAttribute('aria-selected', x===b ? 'true' : 'false'); });
+      el('audSt').hidden = b.dataset.aud !== 'st';
+      el('audPa').hidden = b.dataset.aud !== 'pa';
+    });
+  });
+  document.querySelectorAll('[data-p]').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('[data-p]').forEach(function(x){ x.setAttribute('aria-selected', x===b ? 'true' : 'false'); el(x.dataset.p).hidden = x !== b; });
+    });
+  });
+
+  /* --- Тест: 6 вопросов, без регистрации --- */
+  var Q = [
+    { q:'Чем тебе нравится заниматься в свободное время?', o:[
+      ['🎮','Играть, разбираться в гаджетах и программах',{it:2,eng:1}],
+      ['🎨','Рисовать, снимать видео, придумывать',{crea:2}],
+      ['🗣️','Общаться, помогать друзьям',{people:2,med:1}],
+      ['📈','Зарабатывать, продавать, организовывать',{biz:2}]]},
+    { q:'Какой предмет даётся легче всего?', o:[
+      ['➗','Математика или информатика',{it:2,biz:1}],
+      ['⚙️','Физика',{eng:2,it:1}],
+      ['🧬','Биология или химия',{med:2}],
+      ['📚','Языки, литература, история',{crea:1,people:2}]]},
+    { q:'Какая задача тебе ближе?', o:[
+      ['🧩','Найти ошибку в коде или решить головоломку',{it:2}],
+      ['🔧','Собрать или починить что-то руками',{eng:2}],
+      ['🩺','Помочь человеку почувствовать себя лучше',{med:2,people:1}],
+      ['🎤','Убедить людей и запустить проект',{biz:2,crea:1}]]},
+    { q:'Где тебе комфортнее работать?', o:[
+      ['💻','За компьютером, в тишине',{it:2,crea:1}],
+      ['🏗️','На объекте, в лаборатории, «в поле»',{eng:2,med:1}],
+      ['👥','Среди людей, в живом общении',{people:2,med:1}],
+      ['🏢','В команде с целями и цифрами',{biz:2}]]},
+    { q:'Что для тебя важнее в будущей работе?', o:[
+      ['🚀','Работать с технологиями будущего',{it:2,eng:1}],
+      ['❤️','Приносить пользу людям',{med:2,people:2}],
+      ['✨','Творческая свобода',{crea:2}],
+      ['💰','Высокий доход и рост',{biz:2,it:1}]]},
+    { q:'Где хочешь учиться?', o:[
+      ['🇰🇿','В Казахстане, на грант','kz'],
+      ['✈️','За рубежом','abroad'],
+      ['🤔','Пока не решил','unsure']]}
+  ];
+  var WEF = 'Источник: WEF, Future of Jobs Report 2025';
+  var R = {
+    it:{t:'IT и данные', p:[
+      ['📊','Data-аналитик','Ищет закономерности в данных и помогает принимать решения','В топ-4 самых быстрорастущих профессий мира'],
+      ['🤖','Инженер ИИ / машинного обучения','Обучает модели, которые распознают, советуют, предсказывают','В топ-4 самых быстрорастущих профессий мира'],
+      ['💻','Разработчик ПО','Создаёт приложения и сайты','В топ-4 самых быстрорастущих профессий мира']], s:WEF},
+    eng:{t:'Инженерия и энергетика', p:[
+      ['⚡','Инженер возобновляемой энергетики','Солнечные и ветровые станции, энергосистемы','В топ-15 быстрорастущих профессий мира'],
+      ['🚗','Специалист по электромобилям','Электротранспорт и беспилотные системы','В топ-15 быстрорастущих профессий мира'],
+      ['🏗️','Инженер-строитель','Проектирует здания и инфраструктуру','']], s:WEF},
+    med:{t:'Медицина и забота', p:[
+      ['🩺','Врач','Диагностирует и лечит',''],
+      ['💉','Медсестра / медбрат','Ухаживает за пациентами','В Казахстане — одна из лидеров по числу вакансий'],
+      ['🧪','Биотехнолог','Работает с лекарствами и живыми системами','']], s:'Источник по вакансиям: краткосрочный прогноз ЦРТР на 2025 год (данные Enbek.kz)'},
+    biz:{t:'Бизнес и финансы', p:[
+      ['💳','Финтех-специалист','Создаёт банковские и платёжные продукты','Финтех-инженеры — №2 по росту в мире'],
+      ['📈','Финансовый аналитик','Считает, куда выгодно вкладывать',''],
+      ['🗂️','Проектный менеджер','Ведёт команду к результату','']], s:WEF},
+    crea:{t:'Дизайн и медиа', p:[
+      ['🎨','UI/UX-дизайнер','Делает приложения удобными и красивыми',''],
+      ['🎬','Видео- и моушн-дизайнер','Создаёт ролики и анимацию',''],
+      ['📣','Маркетолог','Придумывает, как рассказать о продукте','']], s:''},
+    people:{t:'Люди и образование', p:[
+      ['🍎','Учитель','Объясняет и вдохновляет','В Казахстане — больше всего вакансий'],
+      ['🧠','Психолог','Помогает людям справляться с трудностями',''],
+      ['🤝','HR-специалист','Подбирает людей и развивает команды','']], s:'Источник по вакансиям: краткосрочный прогноз ЦРТР на 2025 год (данные Enbek.kz)'}
   };
-  var log = document.getElementById('ventiLog'), quick = document.getElementById('ventiQuick'), panel = document.getElementById('venti'), fab = document.getElementById('ventiFab');
+  var WHERE = {kz:'Для гранта в Казахстане Ventorme покажет вузы под твои баллы ЕНТ.', abroad:'Для учёбы за рубежом начни с бесплатной проверки уровня IELTS и SAT.', unsure:'Сравни вузы Казахстана и зарубежные в разделе «Подбор вузов».'};
+  var i=0, picks=[];
+  function render(){
+    var s=Q[i];
+    el('tStep').textContent=(i+1)+' из '+Q.length;
+    el('tBar').style.width=(i/Q.length*100)+'%';
+    el('tText').textContent=s.q;
+    el('tBack').hidden = i===0;
+    var box=el('tOpts'); box.innerHTML='';
+    s.o.forEach(function(o){
+      var b=document.createElement('button'); b.type='button'; b.className='opt';
+      b.innerHTML='<span class="em" aria-hidden="true">'+o[0]+'</span><span></span>';
+      b.lastChild.textContent=o[1];
+      b.onclick=function(){ picks[i]=o[2]; i++; if(i<Q.length) render(); else finish(); };
+      box.appendChild(b);
+    });
+  }
+  function finish(){
+    el('tBar').style.width='100%';
+    var score={it:0,eng:0,med:0,biz:0,crea:0,people:0};
+    picks.slice(0,5).forEach(function(m){ for(var k in m) score[k]+=m[k]; });
+    var order=Object.keys(score).sort(function(a,b){ return score[b]-score[a]; });
+    var top=R[order[0]];
+    el('rTitle').textContent='Тебе подходит: '+top.t;
+    var pHtml='';
+    top.p.forEach(function(p){
+      pHtml+='<div class="prof"><span class="em" aria-hidden="true">'+p[0]+'</span><div><b>'+p[1]+'</b>'+(p[3]?'<small class="trend">↗ '+p[3]+'</small>':'<small>'+p[2]+'</small>')+'</div></div>';
+    });
+    el('rProfs').innerHTML=pHtml;
+    el('rAlso').textContent='Также близко: '+R[order[1]].t+'. '+WHERE[picks[5]||'unsure'];
+    el('rSrc').textContent=top.s;
+    el('tBox').style.display='none';
+    el('tRes').classList.add('show');
+    document.querySelector('.test').scrollIntoView({behavior:'smooth',block:'start'});
+    dockBtn.textContent='Получить подробный разбор'; dockBtn.href=REG; dockBtn.classList.add('cta');
+  }
+  el('tBack').onclick=function(){ if(i>0){ i--; render(); } };
+  el('tAgain').onclick=function(){ i=0; picks=[]; el('tRes').classList.remove('show'); el('tBox').style.display=''; render(); };
+  render();
+
+  /* --- Venti: быстрые ответы (без сервера) --- */
+  var V = {
+    start:{a:'Йо! Я Venti 🦍 Помогу разобраться. С чего начнём?', q:['test','free','uni','plus']},
+    test:{u:'Узнать свою профессию', a:'Пройди <a href="#test">бесплатный тест</a> на этой странице — 6 вопросов, без регистрации.', q:['free','reg']},
+    free:{u:'Что бесплатно?', a:'Бесплатно после регистрации: мини-профтест, проверка уровня IELTS и SAT, заполнение портфолио. Карта не нужна.', q:['plus','reg']},
+    plus:{u:'Что даёт Plus?', a:'Plus — 29 900 ₸/мес: полный AI-профтест, подбор вузов по баллам и бюджету, план с дедлайнами, подготовка к экзаменам и помощь с эссе.', q:['free','reg']},
+    uni:{u:'Подобрать университет', a:'Открой <a href="vuzy/">Подбор вузов</a>: фото кампуса и общежитий, цены, требования, карта и отзывы.', q:['test','reg']},
+    reg:{u:'Зарегистрироваться', a:'Погнали! <a href="'+REG+'">Открыть регистрацию →</a>', q:['test','uni']}
+  };
+  var log=el('ventiLog'), quick=el('ventiQuick'), panel=el('venti'), fab=el('ventiFab');
   function say(cls, html){ var d=document.createElement('div'); d.className='msg '+cls; d.innerHTML=html; log.appendChild(d); log.scrollTop=log.scrollHeight; }
   function step(key){
     var n=V[key]; if(n.u) say('me', n.u);
@@ -523,69 +808,8 @@
   }
   var started=false;
   fab.addEventListener('click', function(){ panel.classList.add('open'); fab.style.display='none'; if(!started){ started=true; step('start'); } });
-  document.getElementById('ventiClose').addEventListener('click', function(){ panel.classList.remove('open'); fab.style.display=''; });
-
-  /* --- Мини-тест --- */
-  var Q = [
-    { q:'Что тебе больше нравится делать?', o:[
-      ['🛠️','Разбираться, как всё устроено','tech'],
-      ['💬','Помогать людям и общаться','people'],
-      ['🎨','Придумывать и создавать новое','create'],
-      ['📊','Считать, планировать, управлять','biz']]},
-    { q:'Какие предметы даются легче?', o:[
-      ['➗','Математика и информатика','tech'],
-      ['🧬','Биология и химия','people'],
-      ['📚','Литература, языки, история','create'],
-      ['🌐','Экономика, география, право','biz']]},
-    { q:'Где хочешь учиться?', o:[
-      ['🇰🇿','В Казахстане, на грант','kz'],
-      ['✈️','За рубежом','abroad'],
-      ['🤔','Пока не знаю','unsure']]}
-  ];
-  var R = {
-    tech:{t:'IT и инженерия', d:'Тебе подходят направления, где нужно логически мыслить и строить системы.', ex:'Программирование, анализ данных, инженерия'},
-    people:{t:'Медицина и работа с людьми', d:'Тебе близки профессии, где важны забота, наука и общение.', ex:'Медицина, психология, педагогика'},
-    create:{t:'Креатив и гуманитарные науки', d:'Тебе подходят направления, где ценятся идеи, текст и визуал.', ex:'Дизайн, журналистика, лингвистика'},
-    biz:{t:'Бизнес и управление', d:'Тебе подходят направления, где нужно принимать решения и видеть картину целиком.', ex:'Экономика, менеджмент, право'}
-  };
-  var W = {
-    kz:['Калькулятор гранта покажет, хватает ли баллов ЕНТ','Подбор вузов Казахстана по твоему направлению'],
-    abroad:['Подготовка к IELTS и SAT','Помощь с мотивационным эссе'],
-    unsure:['Сравни вузы в Казахстане и за рубежом','ИИ-помощник Venti ответит на вопросы о поступлении']
-  };
-  var i=0, score={}, where='unsure';
-  var el=function(id){return document.getElementById(id)};
-  function render(){
-    var s=Q[i];
-    el('qStep').textContent=(i+1)+' из '+Q.length;
-    el('qBar').style.width=(i/Q.length*100)+'%';
-    el('qText').textContent=s.q;
-    var box=el('qOpts'); box.innerHTML='';
-    s.o.forEach(function(o){
-      var b=document.createElement('button'); b.type='button'; b.className='opt';
-      b.innerHTML='<span class="em" aria-hidden="true">'+o[0]+'</span><span></span>';
-      b.lastChild.textContent=o[1];
-      b.onclick=function(){ pick(o[2]); };
-      box.appendChild(b);
-    });
-  }
-  function pick(v){
-    if (i<2) score[v]=(score[v]||0)+1; else where=v;
-    i++;
-    if (i<Q.length) return render();
-    el('qBar').style.width='100%';
-    var best='tech',m=-1; for (var k in R){ if((score[k]||0)>m){m=score[k]||0;best=k;} }
-    var r=R[best];
-    el('rTitle').textContent=r.t;
-    el('rText').textContent=r.d;
-    var l=el('rList'); l.innerHTML='';
-    [r.ex].concat(W[where]).forEach(function(t){ var li=document.createElement('li'); li.textContent=t; l.appendChild(li); });
-    el('qBox').style.display='none';
-    el('qRes').classList.add('show');
-    el('quiz').scrollIntoView({behavior:'smooth',block:'start'});
-  }
-  el('qAgain').onclick=function(){ i=0; score={}; where='unsure'; el('qRes').classList.remove('show'); el('qBox').style.display=''; render(); };
-  render();
+  el('ventiClose').addEventListener('click', function(){ panel.classList.remove('open'); fab.style.display=''; });
+  log.addEventListener('click', function(e){ if(e.target.closest('a[href^="#"]')){ panel.classList.remove('open'); fab.style.display=''; } });
 })();
 </script>
 </body>
