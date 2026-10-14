@@ -1,0 +1,10 @@
+# Netlify: статический сайт, сборка не нужна.
+# Лендинг — index.html, подбор вузов — уже собран в vuzy/.
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
